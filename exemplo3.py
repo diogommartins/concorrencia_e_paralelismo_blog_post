@@ -8,7 +8,7 @@ urls = (
     'http://www.submarino.com',
     'http://www.shoptime.com',
     'http://www.soubarato.com',
-) * 100
+)
 
 
 def get_and_print(url):
