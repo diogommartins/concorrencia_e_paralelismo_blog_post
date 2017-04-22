@@ -1,0 +1,20 @@
+import os
+import requests
+from multiprocessing import Pool
+
+
+urls = (
+    'http://www.americanas.com',
+    'http://www.submarino.com',
+    'http://www.shoptime.com',
+    'http://www.soubarato.com',
+) * 100
+
+
+def get_and_print(url):
+    response = requests.get(url)
+    print(response.text)
+
+
+pool = Pool(processes=os.cpu_count())
+pool.map(get_and_print, urls)
